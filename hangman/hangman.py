@@ -1,9 +1,10 @@
-#TODO: Clear console 
-#TODO: repair stages
+#TODO: Clear console DONE biblioteka os
+#TODO: repair stages DONE uzycie zlego nawiasu
 
 import random
 from hangman_art import logo, stages
 from hangman_words import word_list
+import os
 
 # adding game condition
 chosen_word = random.choice(word_list)
@@ -20,6 +21,7 @@ for letter in chosen_word:
 while '_' in display:
     #logic for guessing and assign to password
     guess = input("Guess a letter: ").lower()
+    os.system('clear')
     if guess in display:
         print(f"You already guess this letter: {guess}")
 
@@ -32,7 +34,7 @@ while '_' in display:
     if not guess in chosen_word:
         print("This letter is not in the password")
         lives -= 1
-        #print(stages,lives)
+        print(stages[lives])
         print(f"You have {lives} livesc")
     if lives == 0:
         print(f"You LOOSER. Correct password is: {chosen_word} ")
