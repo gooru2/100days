@@ -10,10 +10,6 @@ nr_letters= int(input("How many letters would you like in your password?\n"))
 nr_symbols = int(input(f"How many symbols would you like?\n"))
 nr_numbers = int(input(f"How many numbers would you like?\n"))
 
-#Eazy Level - Order not randomised:
-#e.g. 4 letter, 2 symbol, 2 number = JduE&!91
-
-#Hard Level - Order of characters randomised:
 password=[]
 for nr_let in range(0, nr_letters):
     lett=random.choice(letters)
@@ -25,13 +21,15 @@ for nr_sym in range(0, nr_symbols):
 
 for nr_num in range(0, nr_numbers):
     numb=random.choice(numbers)
-    password.append(numb)
+    password.append(numb) 
 
-#print(password)
-
+print(password)
+#Eazy Level - Order not randomised:
+#e.g. 4 letter, 2 symbol, 2 number = JduE&!91
 s_pass_str = ''.join(password)
 print(s_pass_str)
 
+#Hard Level - Order of characters randomised:
 #something go bad with type convertion
 hard_password = ''.join(password)
 h_pass = random.sample(hard_password, k=len(hard_password))
